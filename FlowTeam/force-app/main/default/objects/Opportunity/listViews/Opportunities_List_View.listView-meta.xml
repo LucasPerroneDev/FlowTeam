@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunities_List_View</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>PM__c</columns>
+    <columns>OPPORTUNITY.QUANTITY</columns>
+    <columns>StartDate__c</columns>
+    <columns>EndDate__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Opportunities List View</label>
+</ListView>
