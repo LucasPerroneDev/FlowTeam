@@ -8,6 +8,8 @@
     <columns>Quantity_Hs__c</columns>
     <columns>Assign_Hours__c</columns>
     <columns>Hours_Pending__c</columns>
+    <columns>TotalCostxRol__c</columns>
+    <columns>TotalHoursCovered__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

@@ -22,11 +22,14 @@
 		<members>ProjectLineItem__c.Project__c</members>
 		<members>ProjectLineItem__c.Quantity_Hs__c</members>
 		<members>ProjectLineItem__c.Rol__c</members>
+		<members>ProjectLineItem__c.TotalCostxRol__c</members>
+		<members>ProjectLineItem__c.TotalHoursCovered__c</members>
 		<members>Project_Resource__c.EndDate__c</members>
 		<members>Project_Resource__c.Project__c</members>
 		<members>Project_Resource__c.Rate_PerHour__c</members>
 		<members>Project_Resource__c.Resource_Assigned_Hours__c</members>
 		<members>Project_Resource__c.Rol__c</members>
+		<members>Project_Resource__c.SquadLead__c</members>
 		<members>Project_Resource__c.StartDate__c</members>
 		<members>Project_Resource__c.User__c</members>
 		<members>Project__c.Account__c</members>
@@ -35,7 +38,6 @@
 		<members>Project__c.Project_Cost__c</members>
 		<members>Project__c.Project_Manager__c</members>
 		<members>Project__c.Quantity_Hs__c</members>
-		<members>Project__c.Squadlead__c</members>
 		<members>Project__c.StartDate__c</members>
 		<members>Project__c.Status__c</members>
 		<members>Project__c.TotalPendingHs__c</members>
@@ -69,9 +71,7 @@
 		<name>FlexiPage</name>
 	</types>
 	<types>
-		<members>FirstFlow</members>
-		<members>Pending_Hours</members>
-		<members>UpdateDeleteRelated</members>
+		<members>*</members>
 		<name>Flow</name>
 	</types>
 	<types>
