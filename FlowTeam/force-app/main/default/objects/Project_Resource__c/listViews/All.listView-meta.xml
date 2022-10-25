@@ -10,7 +10,10 @@
     <columns>Resource_Assigned_Hours__c</columns>
     <columns>Rate_PerHour__c</columns>
     <columns>SquadLead__c</columns>
+<<<<<<< HEAD
     <columns>NombreApellidoUser__c</columns>
+=======
+>>>>>>> 0940fe3 (mando todo)
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

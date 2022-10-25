@@ -43,10 +43,13 @@
                 <behavior>Edit</behavior>
                 <field>SquadLead__c</field>
             </layoutItems>
+<<<<<<< HEAD
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>NombreApellidoUser__c</field>
             </layoutItems>
+=======
+>>>>>>> 0940fe3 (mando todo)
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

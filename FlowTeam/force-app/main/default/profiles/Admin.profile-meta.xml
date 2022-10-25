@@ -277,11 +277,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+<<<<<<< HEAD
         <editable>true</editable>
         <field>Project__c.Opportunity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+=======
+>>>>>>> 0940fe3 (mando todo)
         <editable>false</editable>
         <field>Project__c.Project_Cost__c</field>
         <readable>true</readable>
@@ -298,6 +301,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+<<<<<<< HEAD
         <field>Project__c.RolHoursCovered__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -313,6 +317,8 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+=======
+>>>>>>> 0940fe3 (mando todo)
         <field>Project__c.StartDate__c</field>
         <readable>true</readable>
     </fieldPermissions>

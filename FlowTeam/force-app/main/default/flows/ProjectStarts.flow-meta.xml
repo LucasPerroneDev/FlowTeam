@@ -4,7 +4,11 @@
         <name>HorascubiertasFaltantes</name>
         <label>HorascubiertasFaltantes</label>
         <locationX>314</locationX>
+<<<<<<< HEAD
         <locationY>1956</locationY>
+=======
+        <locationY>1836</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -37,7 +41,11 @@
         <name>ProyectoPerdiendo</name>
         <label>ProyectoPerdiendo</label>
         <locationX>578</locationX>
+<<<<<<< HEAD
         <locationY>1116</locationY>
+=======
+        <locationY>996</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -71,7 +79,11 @@
         <name>SquadLeadNeedChange</name>
         <label>SquadLeadNeedChange</label>
         <locationX>842</locationX>
+<<<<<<< HEAD
         <locationY>996</locationY>
+=======
+        <locationY>876</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -105,7 +117,11 @@
         <name>ContadorPLIconHoras</name>
         <label>ContadorPLIconHoras</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1476</locationY>
+=======
+        <locationY>1356</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <assignmentItems>
             <assignToReference>CounterPLI</assignToReference>
             <operator>AssignCount</operator>
@@ -121,7 +137,11 @@
         <name>CounterPLITrue</name>
         <label>CounterPLITrue</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1716</locationY>
+=======
+        <locationY>1596</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <assignmentItems>
             <assignToReference>CounterTruePLI</assignToReference>
             <operator>AssignCount</operator>
@@ -146,7 +166,11 @@
             </value>
         </assignmentItems>
         <connector>
+<<<<<<< HEAD
             <targetReference>UnicoSquadLead</targetReference>
+=======
+            <targetReference>ProjectRequirements</targetReference>
+>>>>>>> 0940fe3 (mando todo)
         </connector>
     </assignments>
     <assignments>
@@ -169,7 +193,11 @@
         <name>ZeroCounterPLI</name>
         <label>ZeroCounterPLI</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1116</locationY>
+=======
+        <locationY>996</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <assignmentItems>
             <assignToReference>CounterPLI</assignToReference>
             <operator>Assign</operator>
@@ -185,7 +213,11 @@
         <name>ZeroCounterPLITrue</name>
         <label>ZeroCounterPLITrue</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1236</locationY>
+=======
+        <locationY>1116</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <assignmentItems>
             <assignToReference>CounterTruePLI</assignToReference>
             <operator>Assign</operator>
@@ -224,7 +256,11 @@
         <name>Ganancia_o_Perdida</name>
         <label>Ganancia o Perdida?</label>
         <locationX>380</locationX>
+<<<<<<< HEAD
         <locationY>996</locationY>
+=======
+        <locationY>876</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <defaultConnector>
             <targetReference>ProyectoPerdiendo</targetReference>
         </defaultConnector>
@@ -253,7 +289,11 @@
         <name>ProjectRequirements</name>
         <label>ProjectRequirements</label>
         <locationX>611</locationX>
+<<<<<<< HEAD
         <locationY>876</locationY>
+=======
+        <locationY>756</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <defaultConnector>
             <targetReference>SquadLeadNeedChange</targetReference>
         </defaultConnector>
@@ -278,7 +318,11 @@
         <name>TotalHoursCovered</name>
         <label>TotalHoursCovered?</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1836</locationY>
+=======
+        <locationY>1716</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <defaultConnector>
             <targetReference>HorascubiertasFaltantes</targetReference>
         </defaultConnector>
@@ -326,7 +370,11 @@
         <name>GetPLITrueHours</name>
         <label>GetPLITrueHours</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1596</locationY>
+=======
+        <locationY>1476</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CounterPLITrue</targetReference>
@@ -355,7 +403,11 @@
         <name>GetPLIwithSoldRol</name>
         <label>GetPLIwithSoldRol</label>
         <locationX>182</locationX>
+<<<<<<< HEAD
         <locationY>1356</locationY>
+=======
+        <locationY>1236</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ContadorPLIconHoras</targetReference>
@@ -401,6 +453,7 @@
         <object>Project_Resource__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+<<<<<<< HEAD
     <recordLookups>
         <description>Trae solo un registro... si tiene mas de uno trae al primero y no importa porque la validation rules y los errores no dejan que se escriba este registro.
 Si es uno solo y esta bien seleccionado es el registro que usara... como el primer Get dice ALL records tengo que hacer este individual para que lo tome como Single Variable</description>
@@ -424,10 +477,13 @@ Si es uno solo y esta bien seleccionado es el registro que usara... como el prim
         <object>Project_Resource__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+=======
+>>>>>>> 0940fe3 (mando todo)
     <recordUpdates>
         <name>UpdateStatusInProgress</name>
         <label>UpdateStatusInProgress</label>
         <locationX>50</locationX>
+<<<<<<< HEAD
         <locationY>1956</locationY>
         <inputAssignments>
             <field>SquadLead__c</field>
@@ -435,6 +491,9 @@ Si es uno solo y esta bien seleccionado es el registro que usara... como el prim
                 <elementReference>UnicoSquadLead.User__r.Id</elementReference>
             </value>
         </inputAssignments>
+=======
+        <locationY>1836</locationY>
+>>>>>>> 0940fe3 (mando todo)
         <inputAssignments>
             <field>Status__c</field>
             <value>
@@ -449,6 +508,7 @@ Si es uno solo y esta bien seleccionado es el registro que usara... como el prim
         <connector>
             <targetReference>CheckProjectStartDate</targetReference>
         </connector>
+<<<<<<< HEAD
         <filterLogic>and</filterLogic>
         <filters>
             <field>Status__c</field>
@@ -457,6 +517,8 @@ Si es uno solo y esta bien seleccionado es el registro que usara... como el prim
                 <stringValue>Pre-kickoff</stringValue>
             </value>
         </filters>
+=======
+>>>>>>> 0940fe3 (mando todo)
         <object>Project__c</object>
         <schedule>
             <frequency>Daily</frequency>
@@ -465,7 +527,11 @@ Si es uno solo y esta bien seleccionado es el registro que usara... como el prim
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
+<<<<<<< HEAD
     <status>Active</status>
+=======
+    <status>Obsolete</status>
+>>>>>>> 0940fe3 (mando todo)
     <textTemplates>
         <name>HorasFaltantes</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
