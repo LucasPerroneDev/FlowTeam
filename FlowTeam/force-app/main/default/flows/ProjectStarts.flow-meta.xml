@@ -4,7 +4,7 @@
         <name>HorascubiertasFaltantes</name>
         <label>HorascubiertasFaltantes</label>
         <locationX>314</locationX>
-        <locationY>1836</locationY>
+        <locationY>1956</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -37,7 +37,7 @@
         <name>ProyectoPerdiendo</name>
         <label>ProyectoPerdiendo</label>
         <locationX>578</locationX>
-        <locationY>996</locationY>
+        <locationY>1116</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -71,7 +71,7 @@
         <name>SquadLeadNeedChange</name>
         <label>SquadLeadNeedChange</label>
         <locationX>842</locationX>
-        <locationY>876</locationY>
+        <locationY>996</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -105,7 +105,7 @@
         <name>ContadorPLIconHoras</name>
         <label>ContadorPLIconHoras</label>
         <locationX>182</locationX>
-        <locationY>1356</locationY>
+        <locationY>1476</locationY>
         <assignmentItems>
             <assignToReference>CounterPLI</assignToReference>
             <operator>AssignCount</operator>
@@ -121,7 +121,7 @@
         <name>CounterPLITrue</name>
         <label>CounterPLITrue</label>
         <locationX>182</locationX>
-        <locationY>1596</locationY>
+        <locationY>1716</locationY>
         <assignmentItems>
             <assignToReference>CounterTruePLI</assignToReference>
             <operator>AssignCount</operator>
@@ -146,7 +146,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>ProjectRequirements</targetReference>
+            <targetReference>UnicoSquadLead</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -169,7 +169,7 @@
         <name>ZeroCounterPLI</name>
         <label>ZeroCounterPLI</label>
         <locationX>182</locationX>
-        <locationY>996</locationY>
+        <locationY>1116</locationY>
         <assignmentItems>
             <assignToReference>CounterPLI</assignToReference>
             <operator>Assign</operator>
@@ -185,7 +185,7 @@
         <name>ZeroCounterPLITrue</name>
         <label>ZeroCounterPLITrue</label>
         <locationX>182</locationX>
-        <locationY>1116</locationY>
+        <locationY>1236</locationY>
         <assignmentItems>
             <assignToReference>CounterTruePLI</assignToReference>
             <operator>Assign</operator>
@@ -224,7 +224,7 @@
         <name>Ganancia_o_Perdida</name>
         <label>Ganancia o Perdida?</label>
         <locationX>380</locationX>
-        <locationY>876</locationY>
+        <locationY>996</locationY>
         <defaultConnector>
             <targetReference>ProyectoPerdiendo</targetReference>
         </defaultConnector>
@@ -253,7 +253,7 @@
         <name>ProjectRequirements</name>
         <label>ProjectRequirements</label>
         <locationX>611</locationX>
-        <locationY>756</locationY>
+        <locationY>876</locationY>
         <defaultConnector>
             <targetReference>SquadLeadNeedChange</targetReference>
         </defaultConnector>
@@ -278,7 +278,7 @@
         <name>TotalHoursCovered</name>
         <label>TotalHoursCovered?</label>
         <locationX>182</locationX>
-        <locationY>1716</locationY>
+        <locationY>1836</locationY>
         <defaultConnector>
             <targetReference>HorascubiertasFaltantes</targetReference>
         </defaultConnector>
@@ -326,7 +326,7 @@
         <name>GetPLITrueHours</name>
         <label>GetPLITrueHours</label>
         <locationX>182</locationX>
-        <locationY>1476</locationY>
+        <locationY>1596</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CounterPLITrue</targetReference>
@@ -355,7 +355,7 @@
         <name>GetPLIwithSoldRol</name>
         <label>GetPLIwithSoldRol</label>
         <locationX>182</locationX>
-        <locationY>1236</locationY>
+        <locationY>1356</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>ContadorPLIconHoras</targetReference>
@@ -401,11 +401,40 @@
         <object>Project_Resource__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <description>Trae solo un registro... si tiene mas de uno trae al primero y no importa porque la validation rules y los errores no dejan que se escriba este registro.
+Si es uno solo y esta bien seleccionado es el registro que usara... como el primer Get dice ALL records tengo que hacer este individual para que lo tome como Single Variable</description>
+        <name>UnicoSquadLead</name>
+        <label>UnicoSquadLead</label>
+        <locationX>611</locationX>
+        <locationY>756</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ProjectRequirements</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SquadLead__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Project_Resource__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>UpdateStatusInProgress</name>
         <label>UpdateStatusInProgress</label>
         <locationX>50</locationX>
-        <locationY>1836</locationY>
+        <locationY>1956</locationY>
+        <inputAssignments>
+            <field>SquadLead__c</field>
+            <value>
+                <elementReference>UnicoSquadLead.User__r.Id</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Status__c</field>
             <value>
@@ -420,6 +449,14 @@
         <connector>
             <targetReference>CheckProjectStartDate</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pre-kickoff</stringValue>
+            </value>
+        </filters>
         <object>Project__c</object>
         <schedule>
             <frequency>Daily</frequency>
@@ -428,7 +465,7 @@
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
     <textTemplates>
         <name>HorasFaltantes</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

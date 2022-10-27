@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TareasIncompletas</fullName>
+    <active>true</active>
+    <description>Si hay tareas incompletas arrojar error</description>
+    <errorConditionFormula>TareasImcompletas__c &gt;0</errorConditionFormula>
+    <errorMessage>El Projecto tiene tareas pendientes por cerrar. Revise las tareas para actualizar</errorMessage>
+</ValidationRule>
