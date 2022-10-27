@@ -10,6 +10,7 @@
     <columns>Resource_Assigned_Hours__c</columns>
     <columns>Rate_PerHour__c</columns>
     <columns>SquadLead__c</columns>
+    <columns>NombreApellidoUser__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

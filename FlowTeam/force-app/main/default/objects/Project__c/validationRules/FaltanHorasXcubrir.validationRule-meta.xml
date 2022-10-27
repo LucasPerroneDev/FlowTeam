@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FaltanHorasXcubrir</fullName>
+    <active>true</active>
+    <description>Si alguno de los recursos no tiene sus horas vendidas completamente asignadas (puede tener mas) arroja error.</description>
+    <errorConditionFormula>RolHoursCovered__c = &quot;false&quot;</errorConditionFormula>
+    <errorMessage>Algun Rol tiene pendientes horas por asignar versus las vendidas - corregir</errorMessage>
+</ValidationRule>

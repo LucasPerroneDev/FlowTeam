@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProjectoEnPerdida</fullName>
+    <active>true</active>
+    <description>Si el projecto esta en perdida arroja error</description>
+    <errorConditionFormula>Project_Cost__c &gt;  Total_Amount__c</errorConditionFormula>
+    <errorMessage>El Projecto esta en situacion de Pérdida - corrija valores que afectan al costo del proyecto.</errorMessage>
+</ValidationRule>

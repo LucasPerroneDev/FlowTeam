@@ -205,6 +205,20 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>flowLayout</name>
+                    <value>oneColumn</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowName</name>
+                    <value>FlowTask</value>
+                </componentInstanceProperties>
+                <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>cacheAge</name>
                     <value>1440</value>
                 </componentInstanceProperties>

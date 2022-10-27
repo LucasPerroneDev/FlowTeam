@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Rate_PerHour__c</fullName>
+    <fullName>TareasImcompletas__c</fullName>
+    <description>Usamos para validar si hay tareas incompletas, pegamos con flow un valor si hay pendientes y si no hay pendientes no se pega nada.</description>
     <externalId>false</externalId>
-    <formula>User__r.Rate_PerHour__c</formula>
-    <label>Rate/Per Hour</label>
+    <label>TareasImcompletas</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Number</type>
+    <unique>false</unique>
 </CustomField>

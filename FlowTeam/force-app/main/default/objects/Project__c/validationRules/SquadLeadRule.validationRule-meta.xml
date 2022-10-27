@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SquadLeadRule</fullName>
+    <active>true</active>
+    <description>Solo puede haber 1 SquadLead asignado</description>
+    <errorConditionFormula>Only_1_SquadLead__c  &lt;&gt; 1</errorConditionFormula>
+    <errorMessage>El Projecto debe tener un solo  SquadLead</errorMessage>
+</ValidationRule>
