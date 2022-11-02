@@ -1,0 +1,15 @@
+<template>
+    <div style="height: 300px;" >  
+            <p>{thisprojecto.Id}</p>
+             
+            {thistasks.Subject} 
+            <lightning-datatable key-field="Id"  
+                                 data={dato}  
+                                 columns={columns}  
+                                 hide-checkbox-column 
+                                 >  
+            </lightning-datatable>    
+       
+        
+    </div>  
+</template>

@@ -1,0 +1,37 @@
+<template>    
+    <lightning-card title = "Tasks" icon-name = "custom:custom63">
+        <div class = "slds-m-around_medium">     
+            <!-- <template for:each={dato} for:item="dato">                    
+               <c-child-task key={dato.Id}> Probando</c-child-task>
+            </template>         -->
+          
+             
+          
+        </div>    
+
+        <template if:true={wrapper}>
+             <template for:each={thisproject} for:item="project" >
+                <div key={project.Id}>
+                    <p  >{thisproject.Id}</p>
+                    <p >{thisproject.Name}</p>
+                    
+                </div>
+            </template> 
+     
+
+        </template>
+
+
+        <template if:true={thisproject}>
+            <template for:each={thisproject} for:item="project" >
+               <div key={project.Id}>
+                   <p  >{thisproject.Id}</p>
+                   <p >{thisproject.Name}</p>
+                   
+               </div>
+           </template> 
+    
+
+       </template>
+    </lightning-card>  
+</template>  
