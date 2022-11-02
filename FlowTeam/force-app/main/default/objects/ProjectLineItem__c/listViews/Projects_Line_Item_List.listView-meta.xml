@@ -3,6 +3,6 @@
     <fullName>Projects_Line_Item_List</fullName>
     <columns>NAME</columns>
     <columns>Project__c</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <label>Projects Line Item List</label>
 </ListView>

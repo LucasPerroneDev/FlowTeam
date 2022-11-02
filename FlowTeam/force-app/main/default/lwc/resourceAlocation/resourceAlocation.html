@@ -1,0 +1,26 @@
+<template>
+
+    <lightning-card> 
+
+        <template if:true={thisPLI} for:each={thisPLI} for:item="projectLineItem">
+         
+            <lightning-card key={projectLineItem.Id} title={projectLineItem.Hours_Pending_c}><h3>{projectLineItem.Rol_c}</h3>
+
+                  <!-- <template if:true={thisUsers} for:each={thisUsers} for:item="user"> -->
+              
+                    <c-resource-view this-p-l-i={projectLineItem} onresourcesproject={handleProjectResource}  users={thisUsers}></c-resource-view> <!-- key={user.Id} -->
+        
+               <!--  </template>  -->
+
+               
+
+            </lightning-card> 
+
+        </template>
+
+         <lightning-button onclick={submitAlocte} label="Alocate" title="Alocate Resource" icon-name="action:join_group" class="slds-m-left_x-small"></lightning-button>
+      
+   
+    </lightning-card>
+     
+</template>
