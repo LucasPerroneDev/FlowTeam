@@ -3,6 +3,7 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Project__c</columns>
+    <columns>ProjectStatus__c</columns>
     <columns>User__c</columns>
     <columns>Rol__c</columns>
     <columns>StartDate__c</columns>

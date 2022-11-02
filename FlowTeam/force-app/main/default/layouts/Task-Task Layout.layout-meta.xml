@@ -23,8 +23,6 @@
                 <behavior>Edit</behavior>
                 <field>Description</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Start_Date__c</field>
@@ -33,6 +31,16 @@
                 <behavior>Edit</behavior>
                 <field>ActivityDate</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>RateXHs__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>RealCostxTask__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Status</field>
@@ -44,6 +52,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>TaskEstimatedHs__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TaskHsLoaded__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TaskHsToLoad__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
