@@ -488,10 +488,6 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabVisibilities>
-        <tab>Colpayo__c</tab>
-        <visibility>DefaultOn</visibility>
-    </tabVisibilities>
-    <tabVisibilities>
         <tab>ProjectLineItem__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
