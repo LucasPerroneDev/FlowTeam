@@ -172,16 +172,18 @@ public static void createAlocate(Id projectId, String jsonUsers){
       System.debug('Esta el la lista a insertar(vacia)'+resourcesInsert);
 
 
-      for(Project_Resource__c proj : alocations){
-        
-      Project_Resource__c proje = new  Project_Resource__c (
-         StartDate__c= proj.StartDate__c,
-         EndDate__c= proj.EndDate__c,
-         User__c= proj.Id,
-         Project__c= projectId
-         );
-             resourcesInsert.add(proje); 
-             
+             for(Project_Resource__c proj : alocations){
+               
+             Project_Resource__c proje = new  Project_Resource__c (
+                Resource_Assigned_Hours__c = proj.Resource_Assigned_Hours__c,
+                StartDate__c= proj.StartDate__c,
+                EndDate__c= proj.EndDate__c,
+                User__c= proj.Id,
+                Project__c= projectId,
+                SquadLead__c=proj.SquadLead__c
+                );
+                    resourcesInsert.add(proje); 
+                    
 
      }   
      System.debug('Esta el la lista a insertar'+resourcesInsert);   
@@ -232,12 +234,12 @@ public static ProjectWrapper getProjectWrapper(Id projectId){
    return projectWrapper;
 }  
 
-public class MyException extends Exception {
- public  void CustomEx(){
-     
-         }
-
-}
+      public class MyException extends Exception {
+        public  void CustomEx(){
+            
+                }
+       
+      }    
 }
 
 
