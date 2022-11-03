@@ -9,7 +9,7 @@ public with sharing class ProjectServiceTest {
             Name = 'Virgin Airlines',
             Opportunity__c = oppId,
             Project_Manager__c ='Michael Tester',
-            Quantity_Hours__c = 40,
+            Quantity_Hs__c = 40,
             Project_Cost__c = 50000,
             Squadlead__c = 'Jason Voorhes',
             StartDate__c = '2022-10-5',
