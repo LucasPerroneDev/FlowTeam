@@ -3,8 +3,10 @@ import { LightningElement,api } from 'lwc';
 
     const columns = [
             
-        { label: 'Resource First Name', fieldName: 'FirstName'},
-        { label: 'Last Name', fieldName: 'LastName'},
+        { label: 'Resource First Name', fieldName: 'FirstName',cellAttributes: {
+            class: 'slds-text-color_success slds-text-title_caps slds-text-heading_medium'}},
+        { label: 'Last Name', fieldName: 'LastName', cellAttributes: {
+            class: 'slds-text-color_success slds-text-title_caps slds-text-heading_medium'}},
         { label: 'Rate Per Hour', fieldName: 'Rate_PerHour__c', type: 'currency' },
         {
             label: 'Start Date',
@@ -27,7 +29,9 @@ import { LightningElement,api } from 'lwc';
             month: "2-digit",
             day: "2-digit"
             }
-        }
+        },
+         { label: 'Hours to Assign', fieldName: 'Resource_Assigned_Hours__c', editable: true},
+         { label: 'Squad Lead', fieldName: 'SquadLead__c', editable: true, type: 'boolean'}
     ];
 
 export default class ResourceView extends LightningElement {
@@ -61,11 +65,14 @@ export default class ResourceView extends LightningElement {
         });
     this.dispatchEvent(resources); */
 
-   handleSave(event){
+ 
+
+    
+
+   async handleSave(event){
 
         const datesForResource = event.detail.draftValues;
         console.log('ASI esta compuesto el draft values---------'+JSON.stringify(datesForResource));
-
 
        /* const updatedFields = this.template.querySelector('lightning-datatable').getSelectedRows();
        console.log('ESTO ES LO QUE SE SELECCIONO---------'+JSON.stringify(updatedFields)); */
