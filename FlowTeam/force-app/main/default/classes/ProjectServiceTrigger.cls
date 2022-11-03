@@ -59,10 +59,9 @@ public with sharing class ProjectServiceTrigger {
                 proj.Project__c.addError('Alocation must be between --'+initProject+' and '+endProject);
          }
 
-       /*   if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
+         if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
                 proj.Project__c.addError('Alocation must be splited. Available dates --'+initProject+' to '+proj.StartDate__c.addDays(-1)+ ' and '+proj.EndDate__c.addDays(1) +'to '+endProject);
-         } */
-
+         } 
 
 
         }
@@ -70,6 +69,12 @@ public with sharing class ProjectServiceTrigger {
 
          }else{
             System.debug('NO   ES NULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL');
+
+             for(Project_Resource__c proje : alocations){
+
+         if((proje.StartDate__c < initProject || proje.EndDate__c > endProject) || (proje.StartDate__c > endProject || proje.EndDate__c < initProject)){
+                proje.Project__c.addError('Alocation must be between --'+initProject+' and '+endProject);
+         }
             
          
 
@@ -78,6 +83,7 @@ public with sharing class ProjectServiceTrigger {
          if((proj.StartDate__c < initProject || proj.EndDate__c > endProject) || (proj.StartDate__c > endProject || proj.EndDate__c < initProject)){
                 proj.Project__c.addError('Alocation in must be between --'+initProject+' and '+endProject);
          }
+        }
 
          /*if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
                 proj.Project__c.addError('Alocation must be splited. Available dates --'+initProject+' to '+proj.StartDate__c.addDays(-1)+ ' and '+proj.EndDate__c.addDays(1) +'to '+endProject);
