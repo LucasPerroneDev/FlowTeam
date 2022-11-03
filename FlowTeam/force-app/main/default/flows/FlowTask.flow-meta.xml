@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
+    <assignments>
+        <name>Asignacion</name>
+        <label>Asignacion</label>
+        <locationX>138</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>NombresYroles</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>{!loop.User__r.FirstName}  {!loop.User__r.LastName}      {!loop.User__r.UserRole.Name}</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NombresYroles</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>&lt;br&gt;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loop</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>VerificoSquadLead</name>
         <label>VerificoSquadLead</label>
@@ -53,6 +76,20 @@
     <environments>Default</environments>
     <interviewLabel>FlowTask {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Task Assigment</label>
+    <loops>
+        <name>loop</name>
+        <label>loop</label>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
+        <collectionReference>ResourcesDisponibles</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Asignacion</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Final</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -76,7 +113,7 @@
         <name>CreoTarea</name>
         <label>CreoTarea</label>
         <locationX>50</locationX>
-        <locationY>758</locationY>
+        <locationY>1094</locationY>
         <inputAssignments>
             <field>ActivityDate</field>
             <value>
@@ -150,7 +187,7 @@
         <locationY>518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Final</targetReference>
+            <targetReference>loop</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -168,7 +205,7 @@
         <name>Final</name>
         <label>Final</label>
         <locationX>50</locationX>
-        <locationY>638</locationY>
+        <locationY>974</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -178,6 +215,11 @@
         <fields>
             <name>ProjectoReferencia</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;PROJECT {!PicklistProyectos}  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt; END DATE  &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(231, 22, 22);&quot;&gt;{!ObtengoElProyecto.EndDate__c}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>nombresYrolesscreen</name>
+            <fieldText>&lt;p&gt;{!NombresYroles}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
@@ -289,7 +331,7 @@
             <name>PicklistProyectos</name>
             <choiceReferences>projectos</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Select a Project</fieldText>
+            <fieldText>Select an In Progress  Project</fieldText>
             <fieldType>DropdownBox</fieldType>
             <isRequired>false</isRequired>
         </fields>
@@ -321,4 +363,11 @@
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>NombresYroles</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

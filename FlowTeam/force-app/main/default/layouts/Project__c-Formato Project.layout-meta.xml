@@ -24,8 +24,8 @@
                 <field>Status__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Project_Cost__c</field>
+                <behavior>Edit</behavior>
+                <field>Actual_Cost__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

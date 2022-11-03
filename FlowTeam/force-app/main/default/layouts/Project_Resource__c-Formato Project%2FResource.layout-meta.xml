@@ -48,8 +48,10 @@
                 <behavior>Readonly</behavior>
                 <field>NombreApellidoUser__c</field>
             </layoutItems>
-=======
->>>>>>> 0940fe3 (mando todo)
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ProjectStatus__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

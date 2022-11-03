@@ -13,8 +13,12 @@
 		<name>CustomApplication</name>
 	</types>
 	<types>
+		<members>Activity.RateXHs__c</members>
+		<members>Activity.RealCostxTask__c</members>
 		<members>Activity.Start_Date__c</members>
 		<members>Activity.TaskEstimatedHs__c</members>
+		<members>Activity.TaskHsLoaded__c</members>
+		<members>Activity.TaskHsToLoad__c</members>
 		<members>Opportunity.EndDate__c</members>
 		<members>Opportunity.PM__c</members>
 		<members>Opportunity.StartDate__c</members>
@@ -28,6 +32,7 @@
 		<members>ProjectLineItem__c.TotalHoursCovered__c</members>
 		<members>Project_Resource__c.EndDate__c</members>
 		<members>Project_Resource__c.NombreApellidoUser__c</members>
+		<members>Project_Resource__c.ProjectStatus__c</members>
 		<members>Project_Resource__c.Project__c</members>
 		<members>Project_Resource__c.Rate_PerHour__c</members>
 		<members>Project_Resource__c.Resource_Assigned_Hours__c</members>
@@ -36,6 +41,7 @@
 		<members>Project_Resource__c.StartDate__c</members>
 		<members>Project_Resource__c.User__c</members>
 		<members>Project__c.Account__c</members>
+		<members>Project__c.Actual_Cost__c</members>
 		<members>Project__c.EndDate__c</members>
 		<members>Project__c.Only_1_SquadLead__c</members>
 		<members>Project__c.Opportunity__c</members>
@@ -50,7 +56,6 @@
 		<members>Project__c.TareasImcompletas__c</members>
 		<members>Project__c.TotalPendingHs__c</members>
 		<members>Project__c.Total_Amount__c</members>
-		<members>User.Rate_P__c</members>
 		<members>User.Rate_PerHour__c</members>
 		<name>CustomField</name>
 	</types>
@@ -141,7 +146,12 @@
 		<members>Project__c.ProjectoEnPerdida</members>
 		<members>Project__c.SquadLeadRule</members>
 		<members>Project__c.TareasIncompletas</members>
+		<members>Task.BlockAllWhenTaskCompleted</members>
 		<members>Task.BloqueoCamposTask</members>
+		<members>Task.NoVuelvoAInProgress</members>
+		<members>Task.NoborrarHscargadas</members>
+		<members>Task.NovuelvoaNotStarted</members>
+		<members>Task.VerificarInProgressTask</members>
 		<name>ValidationRule</name>
 	</types>
 	<version>55.0</version>

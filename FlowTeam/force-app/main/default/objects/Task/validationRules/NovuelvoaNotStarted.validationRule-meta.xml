@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NovuelvoaNotStarted</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Status,&quot;Not Started&quot;) , OR(ISPICKVAL(PRIORVALUE(Status),&quot;In Progress&quot;),ISPICKVAL(PRIORVALUE(Status),&quot;Completed&quot;)))</errorConditionFormula>
+    <errorMessage>Una vez In Progress la tarea no puede volver a Not Started</errorMessage>
+</ValidationRule>

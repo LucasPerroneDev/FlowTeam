@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BlockAllWhenTaskCompleted</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Status, &quot;Completed&quot;), OR( ISCHANGED( Subject ),
+ISCHANGED( Description ),
+ISCHANGED( ActivityDate ),
+ISCHANGED( Start_Date__c ),
+ISCHANGED( WhatId ),
+ISCHANGED( TaskEstimatedHs__c ),
+ISCHANGED( TaskHsLoaded__c )))</errorConditionFormula>
+    <errorMessage>Una Tarea Completed no puede editarse. Llama a tu Administrador</errorMessage>
+</ValidationRule>

@@ -6,6 +6,7 @@
     <columns>Project_Manager__c</columns>
     <columns>OWNER.FIRST_NAME</columns>
     <columns>Status__c</columns>
+    <columns>Actual_Cost__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

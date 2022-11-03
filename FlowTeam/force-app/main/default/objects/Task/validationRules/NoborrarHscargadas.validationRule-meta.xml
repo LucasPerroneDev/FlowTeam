@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoborrarHscargadas</fullName>
+    <active>true</active>
+    <description>Una vez cargadas las horas no pueden restarse</description>
+    <errorConditionFormula>PRIORVALUE(TaskHsLoaded__c ) &gt; TaskHsLoaded__c</errorConditionFormula>
+    <errorMessage>Las horas cargadas no pueden restarse</errorMessage>
+</ValidationRule>

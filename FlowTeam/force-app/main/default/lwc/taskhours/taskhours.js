@@ -1,10 +1,7 @@
-import { LightningElement , wire, api} from 'lwc';
+import { LightningElement, wire } from 'lwc';
+//import getProject from '@salesforce/apex/Taskservice.getProject';
 //import getTasks from '@salesforce/apex/Taskservice.getTasks';
-//import getProTas from '@salesforce/apex/Taskservice.getTasks';
-import  showProjectData from '@salesforce/apex/Taskservice.showProjectData'; 
-import  getProjectWrapper from '@salesforce/apex/Taskservice.getProjectWrapper'; 
-       
-
+import getWrapper from '@salesforce/apex/Taskservice.getWrapper';
 
 const columns = [
     { label: 'Id', fieldName: 'Id',editable: true},
@@ -16,72 +13,28 @@ const columns = [
 ];
 
 
-
 export default class Taskhours extends LightningElement {
 
+tarea;
+projecto;
 
-    
-}
+dato=[];
+columns = columns;
 
 
-   /*
-    wrapper;
-    thisproject;
-    thistasks;
-  
-    
-    @wire(showProjectData)
-    project({ data, error }) {
-        if(data) {
-            this.wrapper = data;
-            this.thisproject = data.Name;
-            this.thistasks = data.taskList;
-            console.log('record ==>>> '+JSON.stringify())
-            console.log('SOY DATAAAA=>' + data)
-            console.log('SOY WRAPPER => ' + this.wrapper )
-            console.log('SOY WRAPPER => ' + this.thisproject )
-            console.log('SOY WRAPPER => ' + this.thistasks )
-        }else if(error) {
-            this.error = error;
-        }
-    }*/
-    /*
-    @wire(getProjectWrapper)
-    project({ data, error }) {
-        if(data) {
-            this.wrapper = data;
-            this.thisproject = data.Name;
-            this.thistasks = data.taskList;
-            console.log('record ==>>> '+JSON.stringify())
-            console.log('SOY DATAAAA=>' + data)
-            console.log('SOY WRAPPER => ' + this.thisproject )
-            console.log('SOY WRAPPER => ' + this.thistasks )
-
-        }else if(error) {
-            this.error = error;
-        }
-    }*/
-
-    /*
-    name;
-    thistask
-    thisprojecto;
-    dato = [];
-    columns = columns;
-    
-    @wire(showProjectData)
-    project (Result) {
+@wire(getWrapper)
+project (Result) {
         const { data, error } = Result;
         if (data) {
             
-            console.log('SOY DATAA => ' + data);
+            console.log(data);
             console.log("SOY Project");
-            this.thisprojecto = data.Name;
-            this.thistask = data.taskList
-            this.name =data.projectos;
-            console.log(data.taskList + " Soy Task")
-            const dato = data;
+            this.projecto = data.projectos;
+            this.tarea = data.task;
+            
+            const dato =data.task;
             this.dato = dato;
+            //const dato = data.projectos.Tasks   es indefinido es subquery adentro de Projectos.... no la muestra
             
            
         } else if (error) {
@@ -89,4 +42,22 @@ export default class Taskhours extends LightningElement {
             console.log("SOY ERROR");
         }
     }
-   */
+
+/*@wire(getTasks)
+    task (Result) {
+            const { data, error } = Result;
+            if (data) {
+                
+                console.log(data);
+                console.log("SOY Task");
+                this.dat = data;
+                
+               
+            } else if (error) {
+                this.error = error;
+                console.log("SOY ERROR");
+            }
+        }*/
+
+
+}
