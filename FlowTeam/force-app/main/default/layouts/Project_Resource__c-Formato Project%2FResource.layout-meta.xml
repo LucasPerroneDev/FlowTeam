@@ -43,7 +43,7 @@
                 <behavior>Edit</behavior>
                 <field>SquadLead__c</field>
             </layoutItems>
-<<<<<<< HEAD
+
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>NombreApellidoUser__c</field>
