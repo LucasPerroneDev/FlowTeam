@@ -59,9 +59,9 @@ public with sharing class ProjectServiceTrigger {
                 proj.Project__c.addError('Alocation must be between --'+initProject+' and '+endProject);
          }
 
-         if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
+       /*   if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
                 proj.Project__c.addError('Alocation must be splited. Available dates --'+initProject+' to '+proj.StartDate__c.addDays(-1)+ ' and '+proj.EndDate__c.addDays(1) +'to '+endProject);
-         }
+         } */
 
 
 
@@ -79,10 +79,10 @@ public with sharing class ProjectServiceTrigger {
                 proj.Project__c.addError('Alocation in must be between --'+initProject+' and '+endProject);
          }
 
-         if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
+       /*   if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
                 proj.Project__c.addError('Alocation must be splited. Available dates --'+initProject+' to '+proj.StartDate__c.addDays(-1)+ ' and '+proj.EndDate__c.addDays(1) +'to '+endProject);
          }
-
+ */
 
 
         }
@@ -117,6 +117,12 @@ public with sharing class ProjectServiceTrigger {
                     projecto.StartDate__c.addError('Resource is not available. Choose another Start Date'+mapDatesOk.get(iduser));
                   }else if(!(mapDatesOk.get(iduser).contains(projecto.EndDate__c))){
                      projecto.EndDate__c.addError('Resource is not available. Choose another End Date'+mapDatesOk.get(iduser));
+
+
+
+                  }else if(!(mapDatesOk.get(iduser).contains(projecto.EndDate__c))&&!(mapDatesOk.get(iduser).contains(projecto.StartDate__c))){
+                    projecto.EndDate__c.addError('Alocation must be splited. Available dates --'+mapDatesOk.get(iduser));
+
                   }
                    
                }
@@ -132,6 +138,8 @@ public with sharing class ProjectServiceTrigger {
     System.debug('Este es el mapa-------- ' +userByProj.values());
 
     Integer loopSize;
+
+    //LOOPEO LOS PROJECT RESOURCES QUE TIENE EL USER.
 
     for(Id key: userByProj.keySet()){
         System.debug('Usando keySet--------------- ' +userByProj.keySet());
