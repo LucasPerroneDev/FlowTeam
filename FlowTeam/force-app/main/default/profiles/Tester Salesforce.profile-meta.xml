@@ -442,9 +442,6 @@
         <layout>Project_Resource__c-Formato Project%2FResource</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Project__c-Formato Project</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <objectPermissions>
