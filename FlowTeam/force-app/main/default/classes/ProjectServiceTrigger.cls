@@ -79,10 +79,10 @@ public with sharing class ProjectServiceTrigger {
                 proj.Project__c.addError('Alocation in must be between --'+initProject+' and '+endProject);
          }
 
-       /*   if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
+         /*if(proj.StartDate__c > initProject && proj.EndDate__c < endProject){
                 proj.Project__c.addError('Alocation must be splited. Available dates --'+initProject+' to '+proj.StartDate__c.addDays(-1)+ ' and '+proj.EndDate__c.addDays(1) +'to '+endProject);
          }
- */
+         */
 
 
         }
