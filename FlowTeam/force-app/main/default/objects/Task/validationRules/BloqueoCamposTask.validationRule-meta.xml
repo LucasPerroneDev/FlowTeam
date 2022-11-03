@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BloqueoCamposTask</fullName>
+    <active>true</active>
+    <description>No poder modificar ciertos campos dsp de creada la tarea</description>
+    <errorConditionFormula>OR(ISCHANGED( OwnerId),
+ISCHANGED(  WhatId ), 
+ISCHANGED(  ActivityDate ),
+ISCHANGED( TaskEstimatedHs__c  ),
+ISCHANGED(  WhoId ))</errorConditionFormula>
+    <errorMessage>El campo que quiere modificar esta restringido, hable con su SquadLead</errorMessage>
+</ValidationRule>

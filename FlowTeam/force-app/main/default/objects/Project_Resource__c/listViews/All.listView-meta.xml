@@ -3,12 +3,15 @@
     <fullName>All</fullName>
     <columns>NAME</columns>
     <columns>Project__c</columns>
+    <columns>ProjectStatus__c</columns>
     <columns>User__c</columns>
     <columns>Rol__c</columns>
     <columns>StartDate__c</columns>
     <columns>EndDate__c</columns>
     <columns>Resource_Assigned_Hours__c</columns>
     <columns>Rate_PerHour__c</columns>
+    <columns>SquadLead__c</columns>
+    <columns>NombreApellidoUser__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

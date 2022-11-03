@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Task</fullName>
+    <columns>WHAT_NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>SUBJECT</columns>
+    <columns>Start_Date__c</columns>
+    <columns>DUE_DATE</columns>
+    <columns>PRIORITY</columns>
+    <columns>TaskEstimatedHs__c</columns>
+    <columns>TaskHsLoaded__c</columns>
+    <columns>TaskHsToLoad__c</columns>
+    <columns>STATUS</columns>
+    <columns>RateXHs__c</columns>
+    <columns>RealCostxTask__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>STATUS</field>
+        <operation>notEqual</operation>
+        <value>Completed</value>
+    </filters>
+    <label>All Task</label>
+</ListView>
