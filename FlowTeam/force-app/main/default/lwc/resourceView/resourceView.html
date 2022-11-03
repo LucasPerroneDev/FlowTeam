@@ -1,0 +1,20 @@
+<template>
+<template if:true={userList}>
+    <div style="height: 150px;" > <!--class="myTable"-->
+        <lightning-datatable
+                key-field="Id"
+                data={userList}
+                columns={columns}
+                draft-values={draftValues}
+                onsave={handleSave}
+                hide-checkbox-column
+                >
+        </lightning-datatable>
+    </div>
+    </template>
+</template> <!-- onsave={handleSave} suppress-bottom-bar -->
+
+
+       
+        
+        

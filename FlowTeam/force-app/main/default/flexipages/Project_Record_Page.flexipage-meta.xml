@@ -155,6 +155,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>resourceAlocation</componentName>
+                <identifier>c_resourceAlocation</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>

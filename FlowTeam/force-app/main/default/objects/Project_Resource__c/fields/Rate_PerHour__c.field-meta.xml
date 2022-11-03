@@ -2,11 +2,11 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Rate_PerHour__c</fullName>
     <externalId>false</externalId>
-    <formula>CASE(User__r.UserRole.Name,&quot;Developer&quot;, 30,&quot;Consultant&quot;, 50,&quot;Architect&quot;,60,&quot;Project Manager&quot;,40,0)</formula>
+    <formula>User__r.Rate_PerHour__c</formula>
     <label>Rate/Per Hour</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Currency</type>
