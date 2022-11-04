@@ -36,14 +36,11 @@ public with sharing class ProjectServiceTrigger {
           
          /*  for(User usuario : userSet){
             if(user.Project_Resources__r.isEmpty()){
-
                 Project_Resource__c proje = new  Project_Resource__c (
                    User__c= user.Id
                 
                 );
                     insert proje; 
-
-
           } */
 
 
@@ -75,7 +72,6 @@ public with sharing class ProjectServiceTrigger {
          if((proje.StartDate__c < initProject || proje.EndDate__c > endProject) || (proje.StartDate__c > endProject || proje.EndDate__c < initProject)){
                 proje.Project__c.addError('Alocation must be between --'+initProject+' and '+endProject);
          }
-        }
             
          
 
@@ -92,7 +88,7 @@ public with sharing class ProjectServiceTrigger {
  */
 
 
-        
+        }
 
          
 
@@ -120,7 +116,6 @@ public with sharing class ProjectServiceTrigger {
             for(Id iduser : projectResourcetoInsert.keySet()){
                 for(Project_Resource__c projecto : projectResourcetoInsert.get(iduser)){
                     System.debug('LLEGAMOS ACA?--------' +projectResourcetoInsert.get(iduser));
-                   
                   if(!(mapDatesOk.get(iduser).contains(projecto.StartDate__c))){
                     projecto.StartDate__c.addError('Resource is not available. Choose another Start Date'+mapDatesOk.get(iduser));
                   }else if(!(mapDatesOk.get(iduser).contains(projecto.EndDate__c))){
@@ -131,10 +126,7 @@ public with sharing class ProjectServiceTrigger {
                   }else if(!(mapDatesOk.get(iduser).contains(projecto.EndDate__c))&&!(mapDatesOk.get(iduser).contains(projecto.StartDate__c))){
                     projecto.EndDate__c.addError('Alocation must be splited. Available dates --'+mapDatesOk.get(iduser));
 
-                  } else if(mapDatesOk.get(iduser).contains(projecto.StartDate__c.addDays(5000))) {
-                    projecto.EndDate__c.addError('Resource is not available in all of the dates selected, must be splitted into two different alocations --'+mapDatesOk.get(iduser)); 
-
-                  } 
+                  }
                    
                }
             }                     
@@ -206,17 +198,14 @@ public with sharing class ProjectServiceTrigger {
             
 		    userWithOkDates.put(key, userDates);
 //------------------------------------------------------------------------------
-        } else if((proj.StartDate__c > project.StartDate__c && proj.EndDate__c < project.EndDate__c) && (proj.StartDate__c < project.EndDate__c &&
+        }else if((proj.StartDate__c > project.StartDate__c && proj.EndDate__c < project.EndDate__c) && (proj.StartDate__c < project.EndDate__c &&
         proj.EndDate__c < project.EndDate__c)){
 
               List<Date> userDates = new  List<Date>();
-              
-
-             /*  userDates.add(Date.newInstance(2016, 12, 9)); */
-           
-		   /*  userDates.add(proj.StartDate__c+(proj.StartDate__c.daysBetween(proj.EndDate__c))+proj.EndDate__c);  */
+           /*
+		    userDates.add(proj.StartDate__c+(proj.StartDate__c.daysBetween(proj.EndDate__c))+proj.EndDate__c); */
                 
-             loopSize = (project.StartDate__c.addDays(5000)).daysBetween(project.EndDate__c.addDays(5000));
+            loopSize = (project.StartDate__c).daysBetween(proj.StartDate__c);
             for(Integer i = 1; i < loopSize; i++){
                 Date addingDate = project.StartDate__c.addDays(i);
                 Integer year_p = addingDate.year();
@@ -224,24 +213,11 @@ public with sharing class ProjectServiceTrigger {
                 Integer day_p = addingDate.day();
                 Date myDT = Date.newInstance(year_p, month_p, day_p);
                 userDates.add(myDT);
-
-               // Date addingDate = proj.StartDate__c.addDays(500);
-              // Integer year_p = addingDate.year();
-               // Integer month_p = addingDate.month();
-               // Integer day_p = addingDate.day();
-
-                //Date myDT = Date.newInstance(year_p, month_p, day_p);
-               //userDates.add(myDT);
-
-
-
-
-
-               // userDates.add(project.StartDate__c);
+                userDates.add(project.StartDate__c);
                 //System.debug('fecha armadaaa myDT--------------- ' +myDT);
             }
 
-           /*   loopSize = (proj.EndDate__c).daysBetween(project.EndDate__c);
+             loopSize = (proj.EndDate__c).daysBetween(project.EndDate__c);
             for(Integer i = 1; i <= loopSize; i++){
                 Date addingDate = proj.EndDate__c.addDays(i);
                 Integer year_p = addingDate.year();
@@ -250,13 +226,13 @@ public with sharing class ProjectServiceTrigger {
                 Date myDT = Date.newInstance(year_p, month_p, day_p);
                 userDates.add(myDT);
                 //System.debug('fecha armadaaa myDT--------------- ' +myDT);
-            } */
+            }
             
             System.debug('fecha armadaaa myDT con una parte inicio y otra fin--------------- ' +userDates);
             
-		    userWithOkDates.put(key, userDates); 
+		    userWithOkDates.put(key, userDates);
 //----------------------------------------------------------------------
-        }  else if((proj.StartDate__c == project.StartDate__c && proj.EndDate__c < project.EndDate__c) && (proj.StartDate__c < project.EndDate__c &&
+        } else if((proj.StartDate__c == project.StartDate__c && proj.EndDate__c < project.EndDate__c) && (proj.StartDate__c < project.EndDate__c &&
         proj.EndDate__c > project.StartDate__c)){
 
             List<Date> userDates = new  List<Date>();
@@ -373,7 +349,6 @@ public with sharing class ProjectServiceTrigger {
 
 
         }
-
         System.debug('Esta es el mapa lleno hasta ahora------------ ' +userWithOkDates);        
              }
          }
@@ -422,8 +397,6 @@ public with sharing class ProjectServiceTrigger {
         }else if(userByProj.get(projmap.StartDate__c) < project.StartDate__c &&
                     userByProj.get(projmap.EndDate__c) > project.StartDate__c && 
                  userByProj.get(projmap.EndDate__c) < project.EndDate__c){
-
-
                     List<Date> userDates = new  List<Date>();
 		userDates.add(userByProj.get(projmap.StartDate__c));
         userDates.add(userByProj.get(projmap.EndDate__c));
@@ -436,7 +409,6 @@ public with sharing class ProjectServiceTrigger {
         Set<Id> userStratWhenFinishPlus1EndOk = new  Set<Id>();
         Set<Id> userStratokEndWhenBegginMinus1 = new  Set<Id>(); */
 /* 
-
                  }else if(projmap.StartDate__c 
                 > project.StartDate__c &&
                  projmap.EndDate__c
@@ -465,16 +437,12 @@ public with sharing class ProjectServiceTrigger {
    /*  StartDate__c.daysBetween(userStartDate__c)
     StartDate__c.isSameDay(userStartDate__c)
     day()
-
     Map<Id, List<> 
-
     11-15
     10-20
     15-20
-
     1-5
     5-7
-
     userByProj.StartDate__c 
     userByProj.EndDate__c */
     
@@ -482,4 +450,3 @@ public with sharing class ProjectServiceTrigger {
 //project 10 al 20 // project
 //user tiene projectresources 10 al 15 // userByProj
 //user tiene disponible del 16 al 20 // result en mapa
-
